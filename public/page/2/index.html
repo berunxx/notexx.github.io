@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Wayne`s Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="路小飞的博客" type="application/atom+xml">
 
 
 
@@ -83,13 +83,13 @@
 
 <meta name="description" content="There is no elevator to success — you have to take the stairs">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Wayne`s Blog">
+<meta property="og:title" content="路小飞的博客">
 <meta property="og:url" content="https://www.waynezw.cn/page/2/index.html">
-<meta property="og:site_name" content="Wayne`s Blog">
+<meta property="og:site_name" content="路小飞的博客">
 <meta property="og:description" content="There is no elevator to success — you have to take the stairs">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wayne`s Blog">
+<meta name="twitter:title" content="路小飞的博客">
 <meta name="twitter:description" content="There is no elevator to success — you have to take the stairs">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>Wayne`s Blog</title>
+  <title>路小飞的博客</title>
   
 
 
@@ -176,7 +176,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Wayne`s Blog</span>
+        <span class="site-title">路小飞的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -305,16 +305,214 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2018/04/java-object-source.html">
+    <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2018/04/java-string-autocompile.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
+      <meta itemprop="name" content="路小飞">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
+      <meta itemprop="name" content="路小飞的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/java-string-autocompile.html" itemprop="url">java 字符串位数不足自动补全</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T00:00:00+08:00">
+                2018-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+          
+            <span class="post-updated">
+              &nbsp; | &nbsp; 更新于
+              <time itemprop="dateUpdated" datetime="2018-09-15T09:59:52+08:00" content="2018-09-15">
+                2018-09-15
+              </time>
+            </span>
+          
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/java-string-autocompile.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/java-string-autocompile.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  102
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="java-字符串位数不足自动补全"><a href="#java-字符串位数不足自动补全" class="headerlink" title="java 字符串位数不足自动补全"></a>java 字符串位数不足自动补全</h2><ul>
+<li>使用<code>org.apache.commons.lang</code>包下的<code>StringUtils</code>的leftPad函数，可以直接得到想要的结果。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//第一个参数：补位之前的值，第二个参数：总共的位数，第三个参数：补位用什么字符来填充。</span></span><br><span class="line">		<span class="keyword">final</span> String s = org.apache.commons.lang.StringUtils.leftPad(<span class="string">"10110"</span>, <span class="number">8</span>, <span class="string">"0"</span>);</span><br><span class="line">		System.out.println(s); <span class="comment">// output: 00010110</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    <div>
+     
+     
+    </div>
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2018/04/java-object-source.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="路小飞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="路小飞的博客">
     </span>
 
     
@@ -447,16 +645,26 @@
       
         
           
-          简介Object类是所有类根，即所有的类都隐式继承了Object.
-常用方法hashCode()hashCode方法返回对象的散列码，相等对象必须返回相等的hashCode，不同对象的hashCode尽可能不相等；Obejct中定义的hashCode方法为：1public native int ha
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/java-object-source.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Object类是所有类根，即所有的类都隐式继承了Object.</p>
+<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><h2 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode()"></a>hashCode()</h2><p>hashCode方法返回对象的散列码，相等对象必须返回相等的hashCode，不同对象的hashCode尽可能不相等；Obejct中定义的hashCode方法为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public native int hashCode();</span><br></pre></td></tr></table></figure></p>
+<h2 id="equals"><a href="#equals" class="headerlink" title="equals()"></a>equals()</h2><p>Object中定义的equals()方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>equals()方法，顾名思义就是判断是否相等，可以看见Object中equals()方法是用 ‘==’来判断地址;由此可见，我们常用String类的肯定是重写了该方法的，查看String的源码；<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object anObject)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> == anObject) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (anObject <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">        String anotherString = (String)anObject;</span><br><span class="line">        <span class="keyword">int</span> n = value.length;</span><br><span class="line">        <span class="keyword">if</span> (n == anotherString.value.length) &#123;</span><br><span class="line">            <span class="keyword">char</span> v1[] = value;</span><br><span class="line">            <span class="keyword">char</span> v2[] = anotherString.value;</span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n-- != <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (v1[i] != v2[i])</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当我们重写equals时总要重写hashCode：</p>
+<ul>
+<li>重写equals不重写hashCode，会导致“不相等对象拥有相同的hashCode”，导致集合类HashMap，HashSet和Hashtable无法工作；极端情况下，在散列表中使所有对象的hashCode都相等，所有对象都被映射到同一个桶中，散列表退化成链表；</li>
+<li>当两个对象调用equal返回true，则两个对象各自调用hashCode()返回相同hashCode；</li>
+<li>当两个对象调用equal返回false， 两个对象各自调用hashCode()返回的hashCode可以相同（散列冲突不能完全避免）</li>
+</ul>
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h2><p>Object类中toString方法，输出对象的“对象类名@散列码”；<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> getClass().getName() + <span class="string">"@"</span> + Integer.toHexString(hashCode());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize()"></a>finalize()</h2><p>Obejct类中finalize()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>finalize()会在对象被垃圾回收时由垃圾回收器调用，垃圾对象是指没有引用指向的对象</p>
+<ul>
+<li>JVM的垃圾回收是”最少回收”方式，只有当内存不够的时候才会进行垃圾回收</li>
+<li>如果调用System.gc() 这个方法，只是告诉JVM 希望这里进行垃圾回收，但是具体什么时候回收还需要看JVM的运行状态，且System.gc()对资源还是有一定消耗，如果盲目的运用System.gc()这个方法，反而效率还会下降，看场景适用；</li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/xu511739113/article/details/52328727" target="_blank" rel="noopener">https://blog.csdn.net/xu511739113/article/details/52328727</a><br><a href="https://segmentfault.com/a/1190000009057426" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009057426</a></p>
+
+          
         
       
     </div>
@@ -511,13 +719,13 @@
     <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2018/03/springboot2-new-featrues.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
+      <meta itemprop="name" content="路小飞">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
+      <meta itemprop="name" content="路小飞的博客">
     </span>
 
     
@@ -650,220 +858,27 @@
       
         
           
-          SpringBoot 2.0 新特性在 2018 年 3 月 1 日早上，Spring Boot 2.0 发布，在Spring Boot的官网中，2.0.0已经是最新的Spring Boot推荐版本，并提供了 Maven 中央仓库地址。
-官方表示，这个版本经历了 17 个月的开发，有 215 个不同
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/springboot2-new-featrues.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    <div>
-     
-     
-    </div>
-    
-    
-    
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2018/02/exchange-send-mail-java.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/exchange-send-mail-java.html" itemprop="url">exchange邮箱类型使用Java发送邮件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-11T00:00:00+08:00">
-                2018-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-          
-            <span class="post-updated">
-              &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-09-15T10:09:57+08:00" content="2018-09-15">
-                2018-09-15
-              </time>
-            </span>
-          
+            <h2 id="SpringBoot-2-0-新特性"><a href="#SpringBoot-2-0-新特性" class="headerlink" title="SpringBoot 2.0 新特性"></a>SpringBoot 2.0 新特性</h2><p>在 2018 年 3 月 1 日早上，Spring Boot 2.0 发布，在Spring Boot的官网中，2.0.0已经是最新的Spring Boot推荐版本，并提供了 Maven 中央仓库地址。</p>
+<p>官方表示，这个版本经历了 17 个月的开发，有 215 个不同的使用者提供了超过 6800 次的提交。该版本是自 4 年前发布 Spring Boot 1.0 以来的第一次重大修订，也是首个提供对 Spring Framework 5.0 支持的 GA 稳定版本。</p>
+<p>Spring Boot 2.0 主要有以下特性（详见：<a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Release-Notes" target="_blank" rel="noopener">Spring Boot 2.0 Release Notes</a>）。</p>
+<h2 id="支持Java-8和Java-9"><a href="#支持Java-8和Java-9" class="headerlink" title="支持Java 8和Java 9"></a>支持Java 8和Java 9</h2><p>SpringBooot 2.0最低支持Java 8 版本，许多现有的API更新，以利用Java 8 的特性，例如：接口的默认方法，函数回调和新的APIs,如：javax.time。如果你当前使用的是Java 7或者更早的版本，在你开发Springboot 2.0程序之前，你需要升级你的Java版本</p>
+<p><br>Spring Boot 2.0也可以很好地工作，并且已经通过JDK 9进行了测试。</p>
+<h2 id="第三方库的升级"><a href="#第三方库的升级" class="headerlink" title="第三方库的升级"></a>第三方库的升级</h2><p>Spring Boot 2.0建立在Spring Framework 5之上，并且需要Spring Framework 5</p>
+<p>Spring Boot 2.0已尽可能升级到其他第三方游戏机的最新稳定版本。本版本中一些值得注意的依赖性升级包括<br><br>Tomcat 8.5<br><br>Flyway 5<br><br>Hibernate 5.2<br><br>Thymeleaf 3</p>
+<h2 id="更好的响应式支持"><a href="#更好的响应式支持" class="headerlink" title="更好的响应式支持"></a>更好的响应式支持</h2><p>SpringBoot 2.0通过auto-configuration 和 starter-POMs更好的支持响应式应用。Spring Boot的内部本身也在必要时进行了更新，以提供反应性的反应（最明显的是嵌入式服务器支持）</p>
+<p>使用 Spring WebFlux/WebFlux.fn 提供响应式 Web 编程支持<br>Spring Data还为响应式应用程序提供支持。目前Cassandra，MongoDB，Couchbase和Redis都有反应式API支持</p>
+<h2 id="支持-HTTP-2"><a href="#支持-HTTP-2" class="headerlink" title="支持 HTTP/2"></a>支持 HTTP/2</h2><p>为Tomcat，Undertow和Jetty提供HTTP / 2支持。是否支持取决于所选的Web服务器和应用程序环境（因为JDK 8不支持该协议）</p>
+<h2 id="Gradle-插件"><a href="#Gradle-插件" class="headerlink" title="Gradle 插件"></a>Gradle 插件</h2><p>Spring Boot的Gradle插件在很大程度上已被重写，以实现许多重大改进。需要注意：SpringBoot 2.0 现在需要Gradle 4.x 的版本</p>
+<h2 id="Kotlin"><a href="#Kotlin" class="headerlink" title="Kotlin"></a>Kotlin</h2><p>SpringBoot 2.0对Kotlin 1.2.x 版本的支持，并提供了一个runApplication函数，该函数提供了一种使用惯用Kotlin运行Spring Boot应用程序的方法。</p>
+<h2 id="对Quartz调度支持"><a href="#对Quartz调度支持" class="headerlink" title="对Quartz调度支持"></a>对Quartz调度支持</h2><p>SpringBoot 2.0 对Quartz的支持，我们只需要加入 <code>spring-boot-starter-quartz</code> starter POM.</p>
+<p>支持JobStores或者基于JDBC的存储。 Spring应用程序上下文中的所有JobDetail，Calendar和Trigger bean将自动注册到Scheduler中</p>
+<h2 id="Testing-测试"><a href="#Testing-测试" class="headerlink" title="Testing 测试"></a>Testing 测试</h2><p>新版本对测试做了一些改变。</p>
+<ul>
+<li>一个新的<code>@WebFluxTest</code>注解，以支持WebFlux应用程序的“slice”测试。</li>
+<li>现在使用<code>@WebMvcTest</code>和<code>@WebFluxTest</code>自动扫描Converter和GenericConverter bean<h2 id="动画ASCII艺术"><a href="#动画ASCII艺术" class="headerlink" title="动画ASCII艺术"></a>动画ASCII艺术</h2>最后，为了好玩，Spring Boot 2.0现在支持动画GIF横幅。<br><a href="http://myluffy.com/wp-content/uploads/2018/03/animated-ascii-art-1.gif" target="_blank" rel="noopener"><img src="http://myluffy.com/wp-content/uploads/2018/03/animated-ascii-art-1.gif" alt=""></a></li>
+</ul>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/02/exchange-send-mail-java.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/02/exchange-send-mail-java.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  316
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          需求使用Java实现自动发送exchange类型邮箱的功能，本文不会使用SMTP。
-添加dependencie使用gradle，代码如下：1compile 'com.microsoft.ews-java-api:ews-java-api:2.0'
-使用maven，代码如下：12345&lt;depe
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/exchange-send-mail-java.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -918,13 +933,13 @@
     <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2018/02/arraylist-source.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
+      <meta itemprop="name" content="路小飞">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
+      <meta itemprop="name" content="路小飞的博客">
     </span>
 
     
@@ -1057,19 +1072,234 @@
       
         
           
-          概述
-以数组实现。节约空间，但数组有容量限制。超出限制时会增加50%容量，用System.arraycopy（）复制到新的数组。因此最好能给出数组大小的预估值。默认第一次插入元素时创建大小为10的数组。
-按数组下标访问元素－get（i）、set（i,e） 的性能很高，这是数组的基本优势。
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
+<li>以数组实现。节约空间，但数组有容量限制。超出限制时会增加50%容量，用System.arraycopy（）复制到新的数组。因此最好能给出数组大小的预估值。默认第一次插入元素时创建大小为10的数组。</li>
+<li><p>按数组下标访问元素－get（i）、set（i,e） 的性能很高，这是数组的基本优势。</p>
+</li>
+<li><p>如果按下标插入元素、删除元素－add（i,e）、 remove（i）、remove（e），则要用System.arraycopy（）来复制移动部分受影响的元素，性能就变差了。</p>
+</li>
+<li><p>越是前面的元素，修改时要移动的元素越多。直接在数组末尾加入元素－常用的add（e），删除最后一个元素则无影响。</p>
+</li>
+</ul>
+<h1 id="类结构"><a href="#类结构" class="headerlink" title="类结构"></a>类结构</h1><p>ArrayList是Java集合框架List接口的实现类，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">       <span class="comment">// 省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过代码我们看出，ArrayList继承AbstractList方法，并且在实现了List方法的同时，还实现了RandomAccess、Cloneable（克隆）、Serializable（序列化）；<br>ArrayList类图如下所示：<br><img src="http://qxu1146470209.my3w.com/wordpress/wp-content/uploads/2018/02/49feecd1bc989fa98b6aad419ea8db21.png" alt=""></p>
+<h1 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h1><h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 默认初始化容量大小为10</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">10</span>;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 共用的数组实例用于空的实例</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object[] EMPTY_ELEMENTDATA = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 默认大小的空实例所用的共用的数组实例。我们判断当一个元素被加入时数组实例该怎样扩大</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * elementData存储ArrayList内的元素</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">transient</span> Object[] elementData; <span class="comment">// non-private to simplify nested class access</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 存储在ArrayList内的容量大小</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@serial</span></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br></pre></td></tr></table></figure>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 构造一个空的集合，并规定初始化容量</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span>  initialCapacity  该集合需要初始化的容量</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">ArrayList</span><span class="params">(<span class="keyword">int</span> initialCapacity)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (initialCapacity &gt; <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="comment">// 新建一个规定大小容量的集合赋值给 elementData</span></span><br><span class="line">           <span class="keyword">this</span>.elementData = <span class="keyword">new</span> Object[initialCapacity];</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (initialCapacity == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="comment">// 空的集合赋给 elementData</span></span><br><span class="line">           <span class="keyword">this</span>.elementData = EMPTY_ELEMENTDATA;</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// 传入变量 非法，抛出异常。</span></span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal Capacity: "</span>+</span><br><span class="line">                                              initialCapacity);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *  构造一个空的集合并初始化容量为10</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">ArrayList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 构造一个包含指定元素的集合，按集合的顺序返回使用迭代器。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">ArrayList</span><span class="params">(Collection&lt;? extends E&gt; c)</span> </span>&#123;</span><br><span class="line">       elementData = c.toArray();</span><br><span class="line">       <span class="keyword">if</span> ((size = elementData.length) != <span class="number">0</span>) &#123;</span><br><span class="line">           <span class="comment">// c.toArray might (incorrectly) not return Object[] (see 6260652)</span></span><br><span class="line">           <span class="keyword">if</span> (elementData.getClass() != Object[].class)</span><br><span class="line">               elementData = Arrays.copyOf(elementData, size, Object[].class);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="comment">// replace with empty array. 替换为空</span></span><br><span class="line">           <span class="keyword">this</span>.elementData = EMPTY_ELEMENTDATA;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="添加方法-add"><a href="#添加方法-add" class="headerlink" title="添加方法 add()"></a>添加方法 add()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 添加规定的根元素到集合的最后</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">       ensureCapacityInternal(size + <span class="number">1</span>);  <span class="comment">// Increments modCount!!</span></span><br><span class="line">       elementData[size++] = e;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>在add之前会调用ensureCapacityInternal()方法，判断是否需要扩容<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ensureCapacityInternal</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 如果elementData 为空 ，指定elementData的最小默认容量。如果为第一次添加，默认容量为10</span></span><br><span class="line">       <span class="keyword">if</span> (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) &#123;</span><br><span class="line">           minCapacity = Math.max(DEFAULT_CAPACITY, minCapacity);</span><br><span class="line">       &#125;</span><br><span class="line">       ensureExplicitCapacity(minCapacity);</span><br><span class="line">   &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ensureExplicitCapacity</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">       modCount++;</span><br><span class="line">       <span class="comment">// overflow-conscious code 如容量不足，进行扩容。</span></span><br><span class="line">       <span class="keyword">if</span> (minCapacity - elementData.length &gt; <span class="number">0</span>)</span><br><span class="line">           grow(minCapacity);</span><br><span class="line">   &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 增加容量，确保至少可以支持最小规定元素的数量</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// overflow-conscious code</span></span><br><span class="line">       <span class="keyword">int</span> oldCapacity = elementData.length;</span><br><span class="line">       <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">           newCapacity = minCapacity;</span><br><span class="line">       <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">           newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">       <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">       elementData = Arrays.copyOf(elementData, newCapacity);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>从grow方法中可以看出，ArrayList的elementData数组如遇到容量不足时，将会把新容量newCapacity设置为 oldCapacity + (oldCapacity &gt;&gt; 1)。二进制位操作&gt;&gt; 1等同于/2的效果，扩容导致的newCapacity也就设置为原先的1.5倍。</li>
+<li>如果新的容量大于MAX_ARRAY_SIZE。将会调用hugeCapacity将int的最大值赋给newCapacity。不过这种情况一般不会用到，很少会用到这么大的ArrayList。</li>
+<li>在确保有容量的情况下，会将元素添加至elementData数组中。</li>
+</ul>
+<h3 id="移除方法-remove"><a href="#移除方法-remove" class="headerlink" title="移除方法 remove()"></a>移除方法 remove()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 删除列表中指定的元素 并将index 后面的元素移动位置</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line"><span class="comment">//判断index 是否在 list大小范围之内</span></span><br><span class="line">       rangeCheck(index);</span><br><span class="line"></span><br><span class="line">       modCount++;</span><br><span class="line">	<span class="comment">// 根据index 取出需要移除的数据 赋值oldValue</span></span><br><span class="line">       E oldValue = elementData(index);</span><br><span class="line">	<span class="comment">// 需要移动的大小</span></span><br><span class="line">       <span class="keyword">int</span> numMoved = size - index - <span class="number">1</span>;</span><br><span class="line">       <span class="keyword">if</span> (numMoved &gt; <span class="number">0</span>)</span><br><span class="line">           System.arraycopy(elementData, index+<span class="number">1</span>, elementData, index,</span><br><span class="line">                            numMoved);</span><br><span class="line">       elementData[--size] = <span class="keyword">null</span>; <span class="comment">// clear to let GC do its work</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> oldValue;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>该方法是根据元素位置移除列表数据，首先判断index是否在列表元素的范围之内，将需要移除的数据，赋值给oldvalue存储，计算出该元素之后的列表数量，使用System.arraycopy()方法，该方法的作用是：从指定的源数组中复制一个数组，从指定的位置，到目标数组的指定位置。返回oldValue;</li>
+</ul>
 
-如果按下
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/arraylist-source.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+        
+      
+    </div>
+    <div>
+     
+     
+    </div>
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2018/02/exchange-send-mail-java.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="路小飞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="路小飞的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/exchange-send-mail-java.html" itemprop="url">exchange邮箱类型使用Java发送邮件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-11T00:00:00+08:00">
+                2018-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+          
+            <span class="post-updated">
+              &nbsp; | &nbsp; 更新于
+              <time itemprop="dateUpdated" datetime="2018-09-15T10:09:57+08:00" content="2018-09-15">
+                2018-09-15
+              </time>
+            </span>
+          
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/exchange-send-mail-java.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/02/exchange-send-mail-java.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  316
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>使用Java实现自动发送exchange类型邮箱的功能，本文不会使用SMTP。</p>
+<h1 id="添加dependencie"><a href="#添加dependencie" class="headerlink" title="添加dependencie"></a>添加dependencie</h1><p>使用gradle，代码如下：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile <span class="string">'com.microsoft.ews-java-api:ews-java-api:2.0'</span></span><br></pre></td></tr></table></figure></p>
+<p>使用maven，代码如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.microsoft.ews-java-api<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ews-java-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>或者直接导入<code>ews-java-api-2.0.jar</code>包</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.myluffy.springboot.chapter33;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> microsoft.exchange.webservices.data.core.ExchangeService;</span><br><span class="line"><span class="keyword">import</span> microsoft.exchange.webservices.data.core.enumeration.misc.ExchangeVersion;</span><br><span class="line"><span class="keyword">import</span> microsoft.exchange.webservices.data.core.enumeration.property.BodyType;</span><br><span class="line"><span class="keyword">import</span> microsoft.exchange.webservices.data.core.service.item.EmailMessage;</span><br><span class="line"><span class="keyword">import</span> microsoft.exchange.webservices.data.credential.ExchangeCredentials;</span><br><span class="line"><span class="keyword">import</span> microsoft.exchange.webservices.data.credential.WebCredentials;</span><br><span class="line"><span class="keyword">import</span> microsoft.exchange.webservices.data.property.complex.MessageBody;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.URI;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExchangeSendMail</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMail</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        ExchangeService service = <span class="keyword">new</span> ExchangeService(ExchangeVersion.Exchange2010_SP1);</span><br><span class="line">        ExchangeCredentials credentials = <span class="keyword">new</span> WebCredentials(<span class="string">"username"</span>, <span class="string">"password"</span>);</span><br><span class="line">        service.setCredentials(credentials);</span><br><span class="line">        <span class="comment">// outlook.com 改为自己的邮箱服务器地址</span></span><br><span class="line">        service.setUrl(<span class="keyword">new</span> URI(<span class="string">"https://outlook.com/EWS/Exchange.asmx"</span>));</span><br><span class="line">        EmailMessage msg = <span class="keyword">new</span> EmailMessage(service);</span><br><span class="line">        <span class="comment">// 主题</span></span><br><span class="line">        msg.setSubject(<span class="string">"subject"</span>);</span><br><span class="line">        <span class="comment">// 内容</span></span><br><span class="line">        <span class="comment">// MessageBody 默认是发送html格式的内容</span></span><br><span class="line">        MessageBody content = <span class="keyword">new</span> MessageBody(BodyType.Text, <span class="string">"content"</span>);</span><br><span class="line">        msg.setBody(content);</span><br><span class="line"><span class="comment">//        msg.setBody(MessageBody.getMessageBodyFromText("content")); // 内容为html格式</span></span><br><span class="line">        <span class="comment">// 收件人</span></span><br><span class="line">        msg.getToRecipients().add(<span class="string">"xx@gmail.com"</span>);</span><br><span class="line">        <span class="comment">// 抄送人</span></span><br><span class="line">        msg.getCcRecipients().add(<span class="string">"xx2@gmail.com"</span>);</span><br><span class="line">        <span class="comment">// 暗送</span></span><br><span class="line">        msg.getBccRecipients().add(<span class="string">"xx3@gmail.com"</span>);</span><br><span class="line">        <span class="comment">// 附件</span></span><br><span class="line">        msg.getAttachments().addFileAttachment(<span class="string">"/Users/xx/Downloads/demo.text"</span>);</span><br><span class="line">        msg.send();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如有问题，可联系我。</p>
+<p>参考文档<br><a href="https://github.com/OfficeDev/ews-java-api/wiki/Getting-Started-Guide" title="ews-java-api" target="_blank" rel="noopener">ews-java-api</a></p>
+
+          
         
       
     </div>
@@ -1124,13 +1354,13 @@
     <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2018/01/Spring Boot中使用JavaMailSender发送邮件.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
+      <meta itemprop="name" content="路小飞">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
+      <meta itemprop="name" content="路小飞的博客">
     </span>
 
     
@@ -1324,13 +1554,13 @@
     <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2017/11/ajax传递参数问题后台使用对象接收.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
+      <meta itemprop="name" content="路小飞">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
+      <meta itemprop="name" content="路小飞的博客">
     </span>
 
     
@@ -1463,19 +1693,21 @@
       
         
           
+            <ul>
+<li><p>在ajax的传递Json格式的数据到后台，后台使用SpringBoot。</p>
+<p>  <strong>前台Json格式如下:</strong></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"age"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"gender"</span>: <span class="keyword">null</span>,</span><br><span class="line">    <span class="string">"order"</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p> <strong>后台接收对象格式如下:</strong></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">   	<span class="keyword">private</span> Integer age;</span><br><span class="line">       <span class="keyword">private</span> String name;</span><br><span class="line">       <span class="keyword">private</span> Gender gender; <span class="comment">// Gender 为枚举类型</span></span><br><span class="line">       <span class="keyword">private</span> Integer order;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  因为gender为枚举类型，所以有个Gender Enum 类:</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Enum Gender&#123;</span><br><span class="line">	MALE,</span><br><span class="line">    FEMALE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <strong>注意</strong>：</p>
+<p>  前台Json格式中 ‘gender’ 为 null，后台使用对象接收，因为 接收对象中属性Gender为枚举类型。所以前台会报‘400’ 错误，后台因为看见枚举值为 null，或者枚举值不存在，就会报错。</p>
+</li>
+<li>所以在使用有枚举类型对象接收Json格式参数的时候，应该保证传输的值和枚举中对应的属性值一样。</li>
+</ul>
+
           
-在ajax的传递Json格式的数据到后台，后台使用SpringBoot。
-  前台Json格式如下:
-  12345678[&#123;    "age": 1,    "name": "test",    "gender": null,    "order": 1&#125;]
- 后台接收对象格
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/ajax传递参数问题后台使用对象接收.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1530,13 +1762,13 @@
     <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2017/11/Java使用split方法按照'|'拆分字符串.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
+      <meta itemprop="name" content="路小飞">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
+      <meta itemprop="name" content="路小飞的博客">
     </span>
 
     
@@ -1733,13 +1965,13 @@
     <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2017/10/coderbyte .html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
+      <meta itemprop="name" content="路小飞">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
+      <meta itemprop="name" content="路小飞的博客">
     </span>
 
     
@@ -1872,15 +2104,9 @@
       
         
           
-          字符串中两个数字之间 有三个‘？’返回 true1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556import java.util.*;impo
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/coderbyte .html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h2 id="字符串中两个数字之间-有三个‘？’返回-true"><a href="#字符串中两个数字之间-有三个‘？’返回-true" class="headerlink" title="字符串中两个数字之间 有三个‘？’返回 true"></a>字符串中两个数字之间 有三个‘？’返回 true</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">class Main &#123;  </span><br><span class="line">  public static String QuestionsMarks(String str) &#123;</span><br><span class="line"></span><br><span class="line">    // code goes here   </span><br><span class="line">    /* Note: In Java the return type of a function and the</span><br><span class="line">       parameter types being passed are defined, so this return</span><br><span class="line">       call must match the return type of the function.</span><br><span class="line">       You are free to modify the return type. */</span><br><span class="line">        int len =str.length();</span><br><span class="line">       boolean isFlag=false;</span><br><span class="line">       for(int i=0;i&lt;len;++i)&#123;</span><br><span class="line">           char c = str.charAt(i);</span><br><span class="line">           int n =(int)c;</span><br><span class="line">           if(n &gt;= 48 &amp;&amp; n&lt;=57)&#123;</span><br><span class="line">               int s = n-48;</span><br><span class="line">                for(int j=i+1;j&lt;len;++j)&#123;</span><br><span class="line">                        char c1= str.charAt(j);</span><br><span class="line">                        int n1 = (int)c1;</span><br><span class="line">                        if(n1&gt;=48 &amp;&amp; n1&lt;=57)&#123;</span><br><span class="line">                            int s1 = n1-48;</span><br><span class="line">                            if(s1 + s == 10)&#123;</span><br><span class="line">                                String v = str.substring(i+1,j);</span><br><span class="line">                        //        System.out.print(v+&quot; &quot;);</span><br><span class="line">                                int count =0 ;</span><br><span class="line">                                for(int k=0;k&lt;v.length();++k)&#123;</span><br><span class="line">                                    if(v.charAt(k) == &apos;?&apos;)&#123;</span><br><span class="line">                                        count++;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;</span><br><span class="line">                                if(count==3)&#123;</span><br><span class="line">                           //         System.out.print(&quot; &amp;&amp; &quot;);</span><br><span class="line">                                   isFlag=true;</span><br><span class="line">                                &#125;else &#123;</span><br><span class="line">                             //      System.out.print(&quot; @@ &quot;);</span><br><span class="line">                                    isFlag=false;</span><br><span class="line">                                    return &quot;false&quot;;</span><br><span class="line">                                &#125;</span><br><span class="line">                                j=len;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       if(isFlag)</span><br><span class="line">       return &quot;true&quot;;</span><br><span class="line">    return &quot;false&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  public static void main (String[] args) &#123;  </span><br><span class="line">    // keep this function call here     </span><br><span class="line">    Scanner s = new Scanner(System.in);</span><br><span class="line">    System.out.print(QuestionsMarks(s.nextLine()));</span><br><span class="line">  &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
         
       
     </div>
@@ -1935,13 +2161,13 @@
     <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2017/09/使用hexo 同步code到GitHub.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
+      <meta itemprop="name" content="路小飞">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
+      <meta itemprop="name" content="路小飞的博客">
     </span>
 
     
@@ -2074,219 +2300,10 @@
       
         
           
-          因为 我们第一次同步的代码到master分支，只属于编译之后的代码（md文件解析成了HTML文件）。当我们需要更换电脑的时候，同步master分支的代码就无法自由更新hexo blog。所以我们就需要把本地的code也同步上传到GitHub上面。步骤如下：
-1234567$ git init  //
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/使用hexo 同步code到GitHub.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    <div>
-     
-     
-    </div>
-    
-    
-    
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.waynezw.cn/2017/09/spring-sendmail.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WayneZhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wayne`s Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/spring-sendmail.html" itemprop="url">通过Spring发送邮件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T00:00:00+08:00">
-                2017-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-          
-            <span class="post-updated">
-              &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-09-15T10:02:02+08:00" content="2018-09-15">
-                2018-09-15
-              </time>
-            </span>
-          
+            <p>因为 我们第一次同步的代码到master分支，只属于编译之后的代码（md文件解析成了HTML文件）。当我们需要更换电脑的时候，同步master分支的代码就无法自由更新hexo blog。所以我们就需要把本地的code也同步上传到GitHub上面。步骤如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git init  //初始化本地仓库</span><br><span class="line">$ git add <span class="built_in">source</span> //将必要的文件依次添加，有些文件夹如npm <span class="variable">$install</span>产生的node_modules由于路径过长不好处理，所以这里没有用`git add .`命令了，而是依次添加必要文件，如下图所示</span><br><span class="line">$ git commit -m <span class="string">"code commit"</span></span><br><span class="line">$ git branch hexo  //新建hexo分支</span><br><span class="line">$ git checkout hexo  //切换到hexo分支上</span><br><span class="line">$ git remote add origin git@github.com:yourname/yourname.github.io.git  //将本地与Github项目对接</span><br><span class="line">$ git push origin hexo  //push到Github项目的hexo分支上</span><br></pre></td></tr></table></figure>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/spring-sendmail.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/spring-sendmail.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  652
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          记录一次在工作使用Spring框架，发送邮件的demo。
-依赖注意一下，我使用的是gradle，使用maven的需要通过maven的方式引入jar包依赖。123compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'com
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/spring-sendmail.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -2364,9 +2381,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="WayneZhang">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="路小飞">
             
-              <p class="site-author-name" itemprop="name">WayneZhang</p>
+              <p class="site-author-name" itemprop="name">路小飞</p>
               <p class="site-description motion-element" itemprop="description">There is no elevator to success — you have to take the stairs</p>
           </div>
 
@@ -2377,7 +2394,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2388,7 +2405,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2483,7 +2500,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"><!--WayneZhang--><a href="/">博客</a></span>
+  <span class="author" itemprop="copyrightHolder"><!--路小飞--><a href="/">博客</a></span>
 
   
 </div>

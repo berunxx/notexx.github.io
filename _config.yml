@@ -3,11 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Wayne`s Blog
+title: 路小飞的博客
 subtitle:
 description: There is no elevator to success — you have to take the stairs
 keywords:
-author: wayne
+author: 路小飞
+#language: en
 language: zh-Hans
 timezone:
 

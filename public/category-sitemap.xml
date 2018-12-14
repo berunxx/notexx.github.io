@@ -21,20 +21,6 @@
     </url>
 
     <url>
-        <loc>https://www.waynezw.cn/categories/coderbyte/</loc>
-        <lastmod>2018-05-22T16:24:32.031Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.waynezw.cn/categories/mysql/</loc>
-        <lastmod>2018-05-22T16:25:16.038Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.waynezw.cn/categories/SpringBoot/</loc>
         <lastmod>2018-09-15T01:43:32.503Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -56,15 +42,29 @@
     </url>
 
     <url>
-        <loc>https://www.waynezw.cn/categories/java/</loc>
-        <lastmod>2018-10-19T07:17:16.259Z</lastmod>
+        <loc>https://www.waynezw.cn/categories/Mac/</loc>
+        <lastmod>2018-10-27T03:49:49.795Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.waynezw.cn/categories/mac/</loc>
-        <lastmod>2018-10-24T01:52:36.577Z</lastmod>
+        <loc>https://www.waynezw.cn/categories/java/</loc>
+        <lastmod>2018-10-29T02:50:03.098Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.waynezw.cn/categories/coderbyte/</loc>
+        <lastmod>2018-10-29T02:50:15.046Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.waynezw.cn/categories/mysql/</loc>
+        <lastmod>2018-10-29T02:50:37.224Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -23,34 +23,6 @@
     </url>
 
     <url>
-        <loc>https://www.waynezw.cn/tags/coderbyte/</loc>
-        <lastmod>2018-05-22T16:24:32.031Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.waynezw.cn/tags/ajax/</loc>
-        <lastmod>2018-09-15T00:56:24.827Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.waynezw.cn/tags/SpringBoot/</loc>
-        <lastmod>2018-09-15T01:43:32.503Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.waynezw.cn/tags/mysql/</loc>
-        <lastmod>2018-09-15T02:04:02.249Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.waynezw.cn/tags/python/</loc>
         <lastmod>2018-09-15T02:04:02.249Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -86,22 +58,50 @@
     </url>
 
     <url>
+        <loc>https://www.waynezw.cn/tags/nginx/</loc>
+        <lastmod>2018-10-27T03:49:49.795Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.waynezw.cn/tags/SpringBoot/</loc>
+        <lastmod>2018-10-29T02:49:56.552Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.waynezw.cn/tags/ajax/</loc>
+        <lastmod>2018-10-29T02:49:56.552Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.waynezw.cn/tags/java/</loc>
-        <lastmod>2018-10-19T07:17:16.259Z</lastmod>
+        <lastmod>2018-10-29T02:50:15.046Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.waynezw.cn/tags/coderbyte/</loc>
+        <lastmod>2018-10-29T02:50:15.046Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.waynezw.cn/tags/mac/</loc>
-        <lastmod>2018-10-24T01:52:36.577Z</lastmod>
+        <lastmod>2018-10-29T02:50:37.224Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.waynezw.cn/tags/nginx/</loc>
-        <lastmod>2018-10-24T01:52:36.577Z</lastmod>
+        <loc>https://www.waynezw.cn/tags/mysql/</loc>
+        <lastmod>2018-10-29T02:50:37.224Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
