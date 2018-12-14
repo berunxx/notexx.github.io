@@ -126,7 +126,7 @@ scheme: Mist
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/myluffy || github
+  GitHub: https://github.com/waynecoder || github
   E-Mail: mailto:zhangw180@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   Twitter: https://twitter.com/wayne__zw || twitter
