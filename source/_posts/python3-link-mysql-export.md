@@ -1,8 +1,11 @@
 ---
 title: 利用Python3 连接mysql 导出数据为excel格式
-date: 2018-07-09
-category: "python3"
-tags: [python,mysql]
+category: python
+tags:
+  - python
+  - mysql
+abbrlink: 21a7feb2
+date: 2018-07-09 00:00:00
 ---
 ## 背景
 最近在工作中，遇到每隔一段时间都要跑一次数据校验。大概有15个sql语句，需要将这15个sql语句查询的记录导出并且存为excel格式。

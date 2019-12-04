@@ -1,9 +1,10 @@
 ---
 title: java 字符串位数不足自动补全
-date: 2018-04-27
-category: "java" 
-tags: 
+category: Java
+tags:
   - java
+abbrlink: 9c5e6c30
+date: 2018-04-27 00:00:00
 ---
 ## java 字符串位数不足自动补全
 * 使用`org.apache.commons.lang`包下的`StringUtils`的leftPad函数，可以直接得到想要的结果。

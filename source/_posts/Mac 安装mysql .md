@@ -1,10 +1,11 @@
 ---
 title: Mac安装MySQL
-date: 2017-09-17
-category: "mysql"
+category: Mac
 tags:
   - mac
   - mysql
+abbrlink: ec3b3038
+date: 2017-09-17 00:00:00
 ---
 # Mac 安装mysql
 1. 下载dmg文件

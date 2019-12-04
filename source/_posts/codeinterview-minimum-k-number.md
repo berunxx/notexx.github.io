@@ -1,9 +1,9 @@
 ---
 title: 剑指offer——最小的K个数（java版本）
+category: 算法
+tags: '-剑指offer'
+abbrlink: cb7b911e
 date: 2018-10-11 16:16:58
-category: "算法"
-tags:
-  -剑指offer
 ---
 >最小的K个数
 [牛客网——最小的K个数](https://www.nowcoder.com/practice/6a296eb82cf844ca8539b57c23e6e9bf?tpId=13&tqId=11182&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)

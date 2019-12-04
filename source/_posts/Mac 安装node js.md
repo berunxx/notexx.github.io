@@ -1,8 +1,11 @@
 ---
 title: Mac安装nodejs
-date: 2017-09-19
-category: "nodejs"
-tags: [mac,nodejs]
+category: Web
+tags:
+  - mac
+  - nodejs
+abbrlink: d038576f
+date: 2017-09-19 00:00:00
 ---
 # Mac 安装node js
 ## setp 1:

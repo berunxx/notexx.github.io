@@ -1,11 +1,10 @@
 ---
 title: 使用ajax传递参数，后台使用对象接收。报400错误。
-date: 2017-11-22
-category: "java"
+category: Web
 tags:
-  - java
-  - SpringBoot
   - ajax
+abbrlink: 571a3817
+date: 2017-11-22 00:00:00
 ---
 
 * 在ajax的传递Json格式的数据到后台，后台使用SpringBoot。

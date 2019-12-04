@@ -90,6 +90,7 @@
               </time>
             {% endif %}
           </span>
+          <!-- 
           {%if post.updated and post.updated > post.date%}
             <span class="post-updated">
               &nbsp; | &nbsp; {{ __('post.updated') }}
@@ -98,7 +99,7 @@
               </time>
             </span>
           {% endif %}
-
+          -->
           {% if post.categories and post.categories.length and theme.post_meta.categories %}
             <span class="post-category" >
             {% if theme.post_meta.created_at or theme.post_meta.updated_at %}

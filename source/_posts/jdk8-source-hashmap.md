@@ -1,9 +1,11 @@
 ---
-title: JDK8源码学习:HashMap
-date: 2018-09-03
-category: "java" 
-tags: 
+title: 'JDK8源码学习:HashMap'
+category: Java
+tags:
   - java
+  - 源码
+abbrlink: 2da9164
+date: 2018-09-03 00:00:00
 ---
 # 概述
 HashMap是Java的一个集合类，是我们在开发中经常使用的。本文记录个人阅读源码的一些步骤和理解。阅读步骤大致为：变量-->构造方法-->常用方法。

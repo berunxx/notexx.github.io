@@ -1,10 +1,11 @@
 ---
 title: jdk8源码学习：ConcurrentHashMap
-date: 2018-10-10 10:43:50
-category: "java"
+category: Java
 tags:
   - java
-  - jdk
+  - 源码
+abbrlink: '3250641'
+date: 2018-10-10 10:43:50
 ---
 # 概述
 ConcurrentHashMap 是一个线程安全类，是为了解决HashMap的线程不安全衍生出的一个类。虽然说HashTable也是线程的安全，但是HashTable的同步机制颗粒度太粗（实现机制是将put、size等各种方法加上‘synchronized’，导致了所有并发操作需要竞争同一把锁），导致性能低下,现在已经很少被推荐使用。

@@ -1,9 +1,9 @@
 ---
 title: 剑指offer——栈的压入、弹出序列（java版本）
+category: 算法
+tags: '-剑指offer'
+abbrlink: 47c61732
 date: 2018-10-11 16:19:28
-category: "算法"
-tags:
-  -剑指offer
 ---
 >栈的压入、弹出序列
 [牛客网——栈的压入、弹出序列](https://www.nowcoder.com/practice/d77d11405cc7470d82554cb392585106?tpId=13&tqId=11174&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)

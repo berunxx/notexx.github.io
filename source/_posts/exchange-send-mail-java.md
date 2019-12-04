@@ -1,9 +1,10 @@
 ---
 title: exchange邮箱类型使用Java发送邮件
-date: 2018-02-11
-category: "java" 
-tags: 
+category: 技术
+tags:
   - java
+abbrlink: b3686e94
+date: 2018-02-11 00:00:00
 ---
 # 需求
 使用Java实现自动发送exchange类型邮箱的功能，本文不会使用SMTP。

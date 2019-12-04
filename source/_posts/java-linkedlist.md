@@ -1,7 +1,10 @@
 ---
 title: JDK8源码学习：LinkedList
-category: [java]
-tags: [java]
+category:
+  - Java
+tags:
+  - java
+abbrlink: e3ffdb91
 date: 2018-11-14 10:29:02
 ---
 # 概述

@@ -1,9 +1,11 @@
 ---
 title: SpringBoot2.0 新特性
-date: 2018-03-09
-category: "SpringBoot" 
-tags: 
-  - SpringBoot
+category:
+  - Spring
+tags:
+  - springboot
+abbrlink: aaed1c03
+date: 2018-03-09 00:00:00
 ---
 ## SpringBoot 2.0 新特性
 在 2018 年 3 月 1 日早上，Spring Boot 2.0 发布，在Spring Boot的官网中，2.0.0已经是最新的Spring Boot推荐版本，并提供了 Maven 中央仓库地址。

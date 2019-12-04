@@ -1,8 +1,12 @@
 ---
 title: 通过Spring发送邮件
-date: 2017-09-19
-category: "java"
-tags: [spring,java]
+category:
+  - Java
+tags:
+  - spring
+  - java
+abbrlink: 390cf6e4
+date: 2017-09-19 00:00:00
 ---
 记录一次在工作使用Spring框架，发送邮件的demo。
 ## 依赖

@@ -1,9 +1,10 @@
 ---
 title: Java源码学习：Object
-date: 2018-04-03
-category: "java" 
-tags: 
+category: Java
+tags:
   - java
+abbrlink: ad5258d2
+date: 2018-04-03 00:00:00
 ---
 # 简介
 Object类是所有类根，即所有的类都隐式继承了Object.

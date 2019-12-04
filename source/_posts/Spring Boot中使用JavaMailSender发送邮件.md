@@ -1,11 +1,12 @@
 ---
 title: Spring Boot中使用JavaMailSender发送邮件
-date: 2018-01-17
-category: "java" 
-tags: 
+category: Java
+tags:
   - java
   - mail
   - springboot
+abbrlink: 126154d6
+date: 2018-01-17 00:00:00
 ---
 
 # SpringBoot中使用JavaMailSender发送邮件

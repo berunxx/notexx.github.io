@@ -1,11 +1,12 @@
 ---
 title: Java 短链接项目
-date: 2018-07-31
-category: "java"
+category: Java
 tags:
   - java
   - spring
   - springboot
+abbrlink: 8913fd1b
+date: 2018-07-31 00:00:00
 ---
 # 需求
 将很长的http请求的地址，转为短链接。如下所示：

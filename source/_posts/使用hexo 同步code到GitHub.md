@@ -1,8 +1,10 @@
 ---
 title: 使用hexo 同步code到GitHub
-date: 2017-09-20
-tags: [hexo]
-category: "hexo"
+tags:
+  - hexo
+category: Hexo
+abbrlink: 5aa02c5
+date: 2017-09-20 00:00:00
 ---
 
 因为 我们第一次同步的代码到master分支，只属于编译之后的代码（md文件解析成了HTML文件）。当我们需要更换电脑的时候，同步master分支的代码就无法自由更新hexo blog。所以我们就需要把本地的code也同步上传到GitHub上面。步骤如下：

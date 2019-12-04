@@ -1,9 +1,10 @@
 ---
 title: Java使用split 按照'|'（竖线）拆分字符串
-date: 2017-11-20
-category: "java" 
-tags: 
+category: Java
+tags:
   - java
+abbrlink: 9ac45683
+date: 2017-11-20 00:00:00
 ---
 
 在使用String类中的split方法时候，才开始使用了

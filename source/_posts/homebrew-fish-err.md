@@ -1,8 +1,11 @@
 ---
 title: Mac使用fish终端命令，不支持 `$`符号
+category: MacOS
+tags:
+  - mac
+  - fish
+abbrlink: e5358b53
 date: 2018-10-27 07:37:13
-category: "Mac" 
-tags: [mac]
 ---
 ## 问题
 在fish命令中使用以下命令

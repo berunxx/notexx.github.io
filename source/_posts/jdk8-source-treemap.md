@@ -1,13 +1,15 @@
 ---
-title: JDK8源码学习:TreeMap
-date: 2018-09-07
-category: "java" 
-tags: 
+title: 'JDK8源码学习:TreeMap'
+category: Java
+tags:
   - java
+  - 源码
+abbrlink: 3a2cad14
+date: 2018-09-07 00:00:00
 ---
 # 概述
 本文是记录学习，文中有理解错误的地方，请指出共同探讨改正。
-前面介绍了[HashMap](http://www.waynezw.cn/2018/09/03/jdk8-source-hashmap/ "HashMap")，因为HashMap是一种无序的存储集合，当某些时候需要特定的存储顺序的时候，就只能另寻他法了，在jdk中为我们提供了LinkedHashmap和TreeMap以供我们使用，本文先介绍TreeMap。
+前面介绍了[HashMap](2da9164.html "HashMap")，因为HashMap是一种无序的存储集合，当某些时候需要特定的存储顺序的时候，就只能另寻他法了，在jdk中为我们提供了LinkedHashmap和TreeMap以供我们使用，本文先介绍TreeMap。
 TreeMap和HashMap一样都是继承至AbstractMap，并且实现了NavigableMap()，TreeMap是在NavigableMap基础上基于红黑树的实现，他是一种顺序的存储结构。
 TreeMap数据结构为Entry，Entry简单实现如下：
 ```java
@@ -85,12 +87,12 @@ public TreeMap(SortedMap<K, ? extends V> m) {
 public V put(K key, V value) {
 	Entry<K,V> t = root;
 	if (t == null) {
-		// 比较连个key值，使用此时正确的compare方法。
+		// 比较两个key值，使用此时正确的compare方法。
 		compare(key, key); // type (and possibly null) check
 		// new 一个 entry节点
 		root = new Entry<>(key, value, null);
 		size = 1;
-		modCount++; // 记录结构变化的次数
+		modCount++; // 增加结构变化的次数
 		return null;
 	}
 	int cmp;

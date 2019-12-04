@@ -1,9 +1,10 @@
 ---
-title: ArrayList 源码解析
-date: 2018-02-11
-category: "java"
+title: JDK8源码学习：ArrayList 源码解析
+category: Java相关
 tags:
   - java
+abbrlink: 9e8769e6
+date: 2018-02-11 00:00:00
 ---
 # 概述
 * 以数组实现。节约空间，但数组有容量限制。超出限制时会增加50%容量，用System.arraycopy（）复制到新的数组。因此最好能给出数组大小的预估值。默认第一次插入元素时创建大小为10的数组。

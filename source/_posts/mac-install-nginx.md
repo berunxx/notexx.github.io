@@ -1,8 +1,11 @@
 ---
 title: Mac对nginx 启动、关闭、重启
-date: 2018-10-22
-category: "Mac"
-tags: [mac, nginx]
+category: MacOS
+tags:
+  - mac
+  - nginx
+abbrlink: c21378c4
+date: 2018-10-22 00:00:00
 ---
 
 ## 问题
