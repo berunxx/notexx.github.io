@@ -86,7 +86,6 @@ deploy:
   type: git
   repo:
     github: git@github.com:space-notes/space-notes.github.io.git
-    # coding: git@git.coding.net:waynezw/waynezw.git
   branch: master
 
 
