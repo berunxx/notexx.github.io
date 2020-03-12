@@ -8,6 +8,62 @@
     </url>
 
     <url>
+        <loc>https://www.notex.top/2018/10/jdk8-source-ConcurrentHashMap.html</loc>
+        <lastmod>2020-03-12T06:06:38.270Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.notex.top/2017/11/use-ajax-question.html</loc>
+        <lastmod>2020-03-12T06:06:23.625Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.notex.top/2018/01/Spring%20Boot-JavaMailSender.html</loc>
+        <lastmod>2020-03-12T06:04:46.634Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.notex.top/2017/09/Mac-installnode%20js.html</loc>
+        <lastmod>2020-03-12T06:04:33.759Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.notex.top/2017/09/Mac-install-mysql%20.html</loc>
+        <lastmod>2020-03-12T06:04:25.667Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.notex.top/2017/11/java-split-method.html</loc>
+        <lastmod>2020-03-12T06:04:17.717Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.notex.top/2017/09/hexo-github.html</loc>
+        <lastmod>2020-03-12T06:02:42.230Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.notex.top/2019/07/java-lru.html</loc>
         <lastmod>2019-07-18T05:27:50.385Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,14 +74,6 @@
     <url>
         <loc>https://www.notex.top/2018/04/java-object-source.html</loc>
         <lastmod>2019-06-20T08:01:31.088Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.notex.top/2017/09/Mac%20%E5%AE%89%E8%A3%85node%20js.html</loc>
-        <lastmod>2019-05-10T01:37:50.316Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -56,14 +104,6 @@
     </url>
 
     <url>
-        <loc>https://www.notex.top/2017/09/Mac%20%E5%AE%89%E8%A3%85mysql%20.html</loc>
-        <lastmod>2019-05-10T01:37:50.315Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://www.notex.top/2018/02/exchange-send-mail-java.html</loc>
         <lastmod>2019-05-10T01:37:50.315Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -88,24 +128,8 @@
     </url>
 
     <url>
-        <loc>https://www.notex.top/2017/09/%E4%BD%BF%E7%94%A8hexo%20%E5%90%8C%E6%AD%A5code%E5%88%B0GitHub.html</loc>
-        <lastmod>2019-04-23T15:42:35.408Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://www.notex.top/2018/03/springboot2-new-featrues.html</loc>
         <lastmod>2019-04-23T15:42:19.385Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.notex.top/2018/01/Spring%20Boot%E4%B8%AD%E4%BD%BF%E7%94%A8JavaMailSender%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6.html</loc>
-        <lastmod>2019-04-23T15:41:25.838Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -160,22 +184,6 @@
     </url>
 
     <url>
-        <loc>https://www.notex.top/2018/10/jdk8-ConcurrentHashMap.html</loc>
-        <lastmod>2019-04-23T15:40:03.076Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.notex.top/2017/11/Java%E4%BD%BF%E7%94%A8split%E6%96%B9%E6%B3%95%E6%8C%89%E7%85%A7%27%7C'%E6%8B%86%E5%88%86%E5%AD%97%E7%AC%A6%E4%B8%B2.html</loc>
-        <lastmod>2019-04-23T15:39:58.717Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://www.notex.top/2018/04/java-string-autocompile.html</loc>
         <lastmod>2019-04-23T15:39:54.006Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -194,14 +202,6 @@
     <url>
         <loc>https://www.notex.top/2018/10/homebrew-fish-err.html</loc>
         <lastmod>2019-04-23T15:39:35.836Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.notex.top/2017/11/ajax%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98%E5%90%8E%E5%8F%B0%E4%BD%BF%E7%94%A8%E5%AF%B9%E8%B1%A1%E6%8E%A5%E6%94%B6.html</loc>
-        <lastmod>2019-04-23T15:33:21.999Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

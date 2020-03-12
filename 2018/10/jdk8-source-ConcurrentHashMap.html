@@ -85,11 +85,11 @@
 <meta name="keywords" content="java,源码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jdk8源码学习：ConcurrentHashMap">
-<meta property="og:url" content="https://www.notex.top/2018/10/jdk8-ConcurrentHashMap.html">
+<meta property="og:url" content="https://www.notex.top/2018/10/jdk8-source-ConcurrentHashMap.html">
 <meta property="og:site_name" content="路小飞的博客">
 <meta property="og:description" content="概述ConcurrentHashMap 是一个线程安全类，是为了解决HashMap的线程不安全衍生出的一个类。虽然说HashTable也是线程的安全，但是HashTable的同步机制颗粒度太粗（实现机制是将put、size等各种方法加上‘synchronized’，导致了所有并发操作需要竞争同一把锁），导致性能低下,现在已经很少被推荐使用。在jdk8中，ConcurrentHashMap底层实现使">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-23T15:40:03.076Z">
+<meta property="og:updated_time" content="2020-03-12T06:06:38.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jdk8源码学习：ConcurrentHashMap">
 <meta name="twitter:description" content="概述ConcurrentHashMap 是一个线程安全类，是为了解决HashMap的线程不安全衍生出的一个类。虽然说HashTable也是线程的安全，但是HashTable的同步机制颗粒度太粗（实现机制是将put、size等各种方法加上‘synchronized’，导致了所有并发操作需要竞争同一把锁），导致性能低下,现在已经很少被推荐使用。在jdk8中，ConcurrentHashMap底层实现使">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://www.notex.top/2018/10/jdk8-ConcurrentHashMap.html">
+  <link rel="canonical" href="https://www.notex.top/2018/10/jdk8-source-ConcurrentHashMap.html">
 
 
 
@@ -305,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.notex.top/2018/10/jdk8-ConcurrentHashMap.html">
+    <link itemprop="mainEntityOfPage" href="https://www.notex.top/2018/10/jdk8-source-ConcurrentHashMap.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="路小飞">
@@ -347,8 +347,8 @@
           
             <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2019-04-23T23:40:03+08:00" content="2019-04-23">
-                2019-04-23
+              <time itemprop="dateUpdated" datetime="2020-03-12T14:06:38+08:00" content="2020-03-12">
+                2020-03-12
               </time>
             </span>
           
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/jdk8-ConcurrentHashMap.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/jdk8-ConcurrentHashMap.html" itemprop="commentCount"></span>
+                <a href="/2018/10/jdk8-source-ConcurrentHashMap.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/jdk8-source-ConcurrentHashMap.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -490,7 +490,7 @@
           </li>
           <li class="post-copyright-link">
             <strong>本文链接：</strong>
-            <a href="/2018/10/jdk8-ConcurrentHashMap.html" title="jdk8源码学习：ConcurrentHashMap">http://www.waynezw.cn/2018/10/jdk8-ConcurrentHashMap.html</a>
+            <a href="/2018/10/jdk8-source-ConcurrentHashMap.html" title="jdk8源码学习：ConcurrentHashMap">http://www.waynezw.cn/2018/10/jdk8-source-ConcurrentHashMap.html</a>
           </li>
           <li class="post-copyright-license">
             <strong>版权声明： </strong>
@@ -503,7 +503,7 @@
     
     
     
-      <h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2019/04/jdk8-source-Integer.html">JDK8源码学习： Integer 的自动装箱拆箱和缓存机制</a></li><li><a href="/2018/09/jdk8-source-treemap.html">JDK8源码学习:TreeMap</a></li><li><a href="/2018/09/jdk8-source-hashmap.html">JDK8源码学习:HashMap</a></li><li><a href="/2019/04/jdk8-source-String.html">Java8源码学习-String</a></li><li><a href="/2019/04/jdk8-source-hashset.html">JDK8源码学习：HashSet</a></li><li><a href="/2018/07/shorturl-project-java.html">Java 短链接项目</a></li><li><a href="/2019/04/java-keywords.html">Java关键字：instanceof、transient、 final</a></li><li><a href="/2018/04/java-string-autocompile.html">java 字符串位数不足自动补全</a></li><li><a href="/2018/01/Spring Boot中使用JavaMailSender发送邮件.html">Spring Boot中使用JavaMailSender发送邮件</a></li><li><a href="/2018/02/exchange-send-mail-java.html">exchange邮箱类型使用Java发送邮件</a></li></ul>
+      <h3> 相关文章：</h3><ul class="related-posts"><li><a href="/2019/04/jdk8-source-Integer.html">JDK8源码学习： Integer 的自动装箱拆箱和缓存机制</a></li><li><a href="/2019/04/jdk8-source-hashset.html">JDK8源码学习：HashSet</a></li><li><a href="/2019/04/jdk8-source-String.html">Java8源码学习-String</a></li><li><a href="/2018/09/jdk8-source-hashmap.html">JDK8源码学习:HashMap</a></li><li><a href="/2018/09/jdk8-source-treemap.html">JDK8源码学习:TreeMap</a></li><li><a href="/2018/07/shorturl-project-java.html">Java 短链接项目</a></li><li><a href="/2018/02/arraylist-source.html">JDK8源码学习：ArrayList 源码解析</a></li><li><a href="/2018/02/exchange-send-mail-java.html">exchange邮箱类型使用Java发送邮件</a></li><li><a href="/2017/10/coderbyte .html">coderbyte练习题--匹配字符串的特殊字符</a></li><li><a href="/2017/09/spring-sendmail.html">通过Spring发送邮件</a></li></ul>
     
     
 
@@ -899,8 +899,8 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://www.notex.top/2018/10/jdk8-ConcurrentHashMap.html';
-          this.page.identifier = '2018/10/jdk8-ConcurrentHashMap.html';
+          this.page.url = 'https://www.notex.top/2018/10/jdk8-source-ConcurrentHashMap.html';
+          this.page.identifier = '2018/10/jdk8-source-ConcurrentHashMap.html';
           this.page.title = 'jdk8源码学习：ConcurrentHashMap';
         };
         var d = document, s = d.createElement('script');
