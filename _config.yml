@@ -16,11 +16,11 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.notex.top
 root: /
-# permalink: :year/:month/:title.html
-permalink: archives/:abbrlink.html
-abbrlink:
-  alg: crc32  # 算法：crc16(default) and crc32
-  rep: hex    # 进制：dec(default) and hex
+permalink: :year/:month/:title.html
+# permalink: archives/:abbrlink.html
+# abbrlink:
+  # alg: crc32  # 算法：crc16(default) and crc32
+  # rep: hex    # 进制：dec(default) and hex
 # permalink_defaults:
 
 # Directory
@@ -85,7 +85,7 @@ theme: next
 deploy:
   type: git
   repo:
-    github: git@github.com:space-notes/space-notes.github.io.git
+    github: git@github.com:notexx/notexx.github.io.git
   branch: master
 
 

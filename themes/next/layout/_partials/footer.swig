@@ -5,7 +5,7 @@
   <span class="with-love">
     <i class="fa fa-{{ theme.footer.icon }}"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"><!--{{ theme.footer.copyright || config.author }}--><a href="/">博客</a></span>
+  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
 
   {% if theme.post_wordcount.totalcount %}
     <span class="post-meta-divider">|</span>
@@ -33,7 +33,7 @@
 
 {% if theme.footer.theme.enable %}
   <div class="theme-info">
-  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274852589'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1274852589%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1274852589'%3E%3C/span%3E%3Cscript src='https://s22.cnzz.com/z_stat.php%3Fid%3D1274852589%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
   {% endif %}
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#
