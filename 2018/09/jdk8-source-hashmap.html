@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.myluffy.com/blog/wp-content/uploads/2018/09/eb52ee72faf1954da936f71a5b43c232.png">
 <meta property="og:image" content="http://www.myluffy.com/blog/wp-content/uploads/2018/09/38ce4ff1cf9ece2b706242424fb6ad2c.png">
-<meta property="og:updated_time" content="2019-04-23T15:40:07.664Z">
+<meta property="og:updated_time" content="2019-12-23T10:59:48.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDK8源码学习:HashMap">
 <meta name="twitter:description" content="概述HashMap是Java的一个集合类，是我们在开发中经常使用的。本文记录个人阅读源码的一些步骤和理解。阅读步骤大致为：变量–&amp;gt;构造方法–&amp;gt;常用方法。在JDK7中，HashMap的底层数据结构为：数组+链表的形式。在JDK8中，HashMap的底层数据结构为：数组+链表+红黑树（TreeNode），增加红黑树的结构。 变量 loadFactor 加载因子默认加载因子为0.75f,为何">
@@ -237,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 23:40:07" itemprop="dateModified" datetime="2019-04-23T23:40:07+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>HashMap是Java的一个集合类，是我们在开发中经常使用的。本文记录个人阅读源码的一些步骤和理解。阅读步骤大致为：变量–&gt;构造方法–&gt;常用方法。<br>在JDK7中，HashMap的底层数据结构为：数组+链表的形式。<br><img src="http://www.myluffy.com/blog/wp-content/uploads/2018/09/eb52ee72faf1954da936f71a5b43c232.png" alt=""><br>在JDK8中，HashMap的底层数据结构为：数组+链表+红黑树（TreeNode），增加红黑树的结构。<br><img src="http://www.myluffy.com/blog/wp-content/uploads/2018/09/38ce4ff1cf9ece2b706242424fb6ad2c.png" alt=""></p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>HashMap是Java的一个集合类，是我们在开发中经常使用的。本文记录个人阅读源码的一些步骤和理解。阅读步骤大致为：变量–&gt;构造方法–&gt;常用方法。<br>在JDK7中，HashMap的底层数据结构为：数组+链表的形式。<br><img src="http://www.myluffy.com/blog/wp-content/uploads/2018/09/eb52ee72faf1954da936f71a5b43c232.png" alt><br>在JDK8中，HashMap的底层数据结构为：数组+链表+红黑树（TreeNode），增加红黑树的结构。<br><img src="http://www.myluffy.com/blog/wp-content/uploads/2018/09/38ce4ff1cf9ece2b706242424fb6ad2c.png" alt></p>
 <h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><ul>
 <li>loadFactor 加载因子<br>默认加载因子为<code>0.75f</code>,为何是<code>0.75</code> 而不是其他的值呢？<br>首先理解一下，什么是加载因子。<br>加载因子是表示Hsah表中元素的填满的程度。如果加载因子越大,填满的元素越多，所以空间利用率提高，但是冲突的机会加大了。反之亦然<br>冲突的机会越大，查找所需要的成本增加，查找时间也相应的增加 了。反之亦然。<br>结合前面两条，我们必须在 “冲突的机会”与”空间利用率”之间寻找一种平衡与折衷。这种平衡与折衷本质上是数据结构中有名的”时间复杂度-空间复杂度”矛盾的平衡与折衷。<br>加载因子的值是可以大于1的。</li>
 <li>threshold<br>threshold表示当HashMap的size大于threshold时会执行resize操作。</li>

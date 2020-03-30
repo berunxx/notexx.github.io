@@ -225,10 +225,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-07-18 12:22:19 / 修改时间：13:27:50" itemprop="dateCreated datePublished" datetime="2019-07-18T12:22:19+08:00">2019-07-18</time>
+              <time title="创建时间：2019-07-18 12:22:19" itemprop="dateCreated datePublished" datetime="2019-07-18T12:22:19+08:00">2019-07-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -273,7 +279,7 @@
 <p>建立一个Node类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 双向链表</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    String key;</span><br><span class="line">    String value;</span><br><span class="line">    Node next;</span><br><span class="line">    Node prev;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(String key, String value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.key = key;</span><br><span class="line">        <span class="keyword">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Node类里面包含了key、value 和前置节点、后置节点。<br>LRUCache实现类如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 尾节点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    Node tail;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 头结点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    Node head;</span><br><span class="line">    Map&lt;String, Node&gt; map = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> capacity = <span class="number">0</span>; <span class="comment">// 容量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.capacity = capacity;</span><br><span class="line">        map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">(String key)</span> </span>&#123;</span><br><span class="line">        Node node = map.get(key);</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 移除末尾节点</span></span><br><span class="line">        removeNode(node);</span><br><span class="line">        <span class="comment">// 移动 node 到头节点</span></span><br><span class="line">        moveToHead(node);</span><br><span class="line">        <span class="comment">// 返回</span></span><br><span class="line">        <span class="keyword">return</span> node.value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(String key, String value)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(key)) &#123;</span><br><span class="line">            <span class="comment">// 已经存在该 key 将key 移动到头结点</span></span><br><span class="line">            Node node = map.get(key);</span><br><span class="line">            <span class="comment">// 移除末尾节点</span></span><br><span class="line">            removeNode(node);</span><br><span class="line">            <span class="comment">// 移动 node 到头节点</span></span><br><span class="line">            moveToHead(node);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 容量判断</span></span><br><span class="line">            <span class="keyword">if</span> (map.size() &gt;= capacity) &#123;</span><br><span class="line">                <span class="comment">// 删除 尾节点</span></span><br><span class="line">                map.remove(tail.key);</span><br><span class="line">                removeNode(tail);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 插入节点 到 头节点</span></span><br><span class="line">            Node node = <span class="keyword">new</span> Node(key, value);</span><br><span class="line">            moveToHead(node);</span><br><span class="line">            map.put(key, node);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 移除节点</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">removeNode</span><span class="params">(Node n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n.prev != <span class="keyword">null</span>) &#123;</span><br><span class="line">            n.prev.next = n.next;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            head = n.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            n.next.prev = n.prev;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            tail = n.prev;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加节点到头节点</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">moveToHead</span><span class="params">(Node n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Node f = head;</span><br><span class="line">        head = n;</span><br><span class="line">        <span class="keyword">if</span> (f != <span class="keyword">null</span>) &#123;</span><br><span class="line">            f.prev = n;</span><br><span class="line">            head.next = f;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (tail == <span class="keyword">null</span>) &#123;</span><br><span class="line">            tail = f;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p>建立一个测试类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LRUCacheTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 设置容量为10 的缓存</span></span><br><span class="line">        LRUCache cache = <span class="keyword">new</span> LRUCache(<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">12</span>; i++) &#123;</span><br><span class="line">            cache.put(<span class="string">""</span> + i, <span class="string">""</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        Node head = cache.head;</span><br><span class="line">        <span class="comment">// 输出缓存中的元素</span></span><br><span class="line">        <span class="comment">// output: 11 10 9 8 7 6 5 4 3 2  </span></span><br><span class="line">        <span class="keyword">while</span> (head != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.print(head.value + <span class="string">" "</span>);</span><br><span class="line">            head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(cache.get(<span class="string">"0"</span>)); <span class="comment">// "0"没有在缓存中 output: ""</span></span><br><span class="line">        System.out.println(cache.get(<span class="string">"3"</span>)); <span class="comment">// output: "3"</span></span><br><span class="line">        System.out.println(cache.get(<span class="string">"4"</span>)); <span class="comment">// output: "4"</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 因为上面 获取了 '3'、'4'这两个元素，所以缓存中的元素顺序发生了变化</span></span><br><span class="line">        Node head2 = cache.head;</span><br><span class="line">        <span class="comment">// output: 4 3 11 10 9 8 7 6 5 2</span></span><br><span class="line">        <span class="keyword">while</span> (head2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.print(head2.value + <span class="string">" "</span>);</span><br><span class="line">            head2 = head2.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>通过上面的测试 LRU 缓存是将最新使用的元素更新到链表的前面，当超出容量时，则移除链表末尾的元素。<br><img src="https://ws1.sinaimg.cn/large/64202e18ly1g53xf21frlj20fw06wjri.jpg" alt=""></p>
+<p>通过上面的测试 LRU 缓存是将最新使用的元素更新到链表的前面，当超出容量时，则移除链表末尾的元素。<br><img src="https://ws1.sinaimg.cn/large/64202e18ly1g53xf21frlj20fw06wjri.jpg" alt></p>
 
       
     </div>
@@ -316,10 +322,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-04-25 13:44:31 / 修改时间：13:46:13" itemprop="dateCreated datePublished" datetime="2019-04-25T13:44:31+08:00">2019-04-25</time>
+              <time title="创建时间：2019-04-25 13:44:31" itemprop="dateCreated datePublished" datetime="2019-04-25T13:44:31+08:00">2019-04-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -414,10 +426,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-04-23 17:35:01 / 修改时间：23:40:12" itemprop="dateCreated datePublished" datetime="2019-04-23T17:35:01+08:00">2019-04-23</time>
+              <time title="创建时间：2019-04-23 17:35:01" itemprop="dateCreated datePublished" datetime="2019-04-23T17:35:01+08:00">2019-04-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -520,7 +538,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-05-10 09:37:50" itemprop="dateModified" datetime="2019-05-10T09:37:50+08:00">2019-05-10</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -623,7 +641,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 23:40:21" itemprop="dateModified" datetime="2019-04-23T23:40:21+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -752,7 +770,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 23:39:44" itemprop="dateModified" datetime="2019-04-23T23:39:44+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -863,7 +881,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 23:39:35" itemprop="dateModified" datetime="2019-04-23T23:39:35+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -959,7 +977,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 23:40:53" itemprop="dateModified" datetime="2019-04-23T23:40:53+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -997,7 +1015,7 @@
 
       
           <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在终端中执行：<br><code>brew install nginx</code><br>安装完成之后，nginx配置文件路径在<code>/usr/local/etc/nginx</code>下</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>查看nginx版本<br><code>nginx -v</code><br><img src="/images/nginx-v.jpg" alt=""><br>启动nginx：<code>brew services start nginx</code><br><img src="/images/nginx-start.jpg" alt=""><br>关闭nginx：<code>brew services stop nginx</code><br><img src="/images/nginx-stop.jpg" alt=""></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>查看nginx版本<br><code>nginx -v</code><br><img src="/images/nginx-v.jpg" alt><br>启动nginx：<code>brew services start nginx</code><br><img src="/images/nginx-start.jpg" alt><br>关闭nginx：<code>brew services stop nginx</code><br><img src="/images/nginx-stop.jpg" alt></p>
 <p>也可以使用如下快捷指令<br>重新启动nginx：<br><code>nginx -s reload</code><br>停止nginx：<br><code>nginx -s stop</code></p>
 
       
@@ -1049,7 +1067,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 20:00:53" itemprop="dateModified" datetime="2019-04-23T20:00:53+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1141,7 +1159,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 20:00:53" itemprop="dateModified" datetime="2019-04-23T20:00:53+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1362,7 +1380,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 23:40:27" itemprop="dateModified" datetime="2019-04-23T23:40:27+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1488,7 +1506,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 23:40:07" itemprop="dateModified" datetime="2019-04-23T23:40:07+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1525,7 +1543,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>HashMap是Java的一个集合类，是我们在开发中经常使用的。本文记录个人阅读源码的一些步骤和理解。阅读步骤大致为：变量–&gt;构造方法–&gt;常用方法。<br>在JDK7中，HashMap的底层数据结构为：数组+链表的形式。<br><img src="http://www.myluffy.com/blog/wp-content/uploads/2018/09/eb52ee72faf1954da936f71a5b43c232.png" alt=""><br>在JDK8中，HashMap的底层数据结构为：数组+链表+红黑树（TreeNode），增加红黑树的结构。<br><img src="http://www.myluffy.com/blog/wp-content/uploads/2018/09/38ce4ff1cf9ece2b706242424fb6ad2c.png" alt=""></p>
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>HashMap是Java的一个集合类，是我们在开发中经常使用的。本文记录个人阅读源码的一些步骤和理解。阅读步骤大致为：变量–&gt;构造方法–&gt;常用方法。<br>在JDK7中，HashMap的底层数据结构为：数组+链表的形式。<br><img src="http://www.myluffy.com/blog/wp-content/uploads/2018/09/eb52ee72faf1954da936f71a5b43c232.png" alt><br>在JDK8中，HashMap的底层数据结构为：数组+链表+红黑树（TreeNode），增加红黑树的结构。<br><img src="http://www.myluffy.com/blog/wp-content/uploads/2018/09/38ce4ff1cf9ece2b706242424fb6ad2c.png" alt></p>
 <h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><ul>
 <li>loadFactor 加载因子<br>默认加载因子为<code>0.75f</code>,为何是<code>0.75</code> 而不是其他的值呢？<br>首先理解一下，什么是加载因子。<br>加载因子是表示Hsah表中元素的填满的程度。如果加载因子越大,填满的元素越多，所以空间利用率提高，但是冲突的机会加大了。反之亦然<br>冲突的机会越大，查找所需要的成本增加，查找时间也相应的增加 了。反之亦然。<br>结合前面两条，我们必须在 “冲突的机会”与”空间利用率”之间寻找一种平衡与折衷。这种平衡与折衷本质上是数据结构中有名的”时间复杂度-空间复杂度”矛盾的平衡与折衷。<br>加载因子的值是可以大于1的。</li>
 <li>threshold<br>threshold表示当HashMap的size大于threshold时会执行resize操作。</li>
@@ -1604,7 +1622,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-23 23:41:20" itemprop="dateModified" datetime="2019-04-23T23:41:20+08:00">2019-04-23</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1641,7 +1659,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>将很长的http请求的地址，转为短链接。如下所示：<br><img src="http://www.myluffy.com/wp-content/uploads/2018/07/112a80391435658790d15308b377aba3.png" alt=""><br>为什么要转短链，短链接可以转发给第三方的时候，能轻易识别，我在开发中有遇到过一次，别人分享给我的地址里面包含了一些特殊字符（$、&amp;）等，我在我的微信里面，直接点击地址，只识别到特殊字符的前半部分，没有整个链接识别完成。</p>
+          <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>将很长的http请求的地址，转为短链接。如下所示：<br><img src="http://www.myluffy.com/wp-content/uploads/2018/07/112a80391435658790d15308b377aba3.png" alt><br>为什么要转短链，短链接可以转发给第三方的时候，能轻易识别，我在开发中有遇到过一次，别人分享给我的地址里面包含了一些特殊字符（$、&amp;）等，我在我的微信里面，直接点击地址，只识别到特殊字符的前半部分，没有整个链接识别完成。</p>
 <h2 id="短链服务的作用："><a href="#短链服务的作用：" class="headerlink" title="短链服务的作用："></a>短链服务的作用：</h2><ul>
 <li>将长链接变为短链接，当然是越短越好</li>
 <li>用户点击短链接的时候，实现自动跳转到原来的长链接</li>
@@ -1713,7 +1731,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-05-10 09:37:50" itemprop="dateModified" datetime="2019-05-10T09:37:50+08:00">2019-05-10</time>
+                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
