@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>路小飞的博客</title>
+  <title>Notex`s Blog</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://www.notex.top/</id>
   
   <author>
-    <name>路小飞</name>
+    <name>notex</name>
     
   </author>
   
