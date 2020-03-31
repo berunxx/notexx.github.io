@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"www.notex.top","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"LRXUDIEYJC","apiKey":"ef97407e66fa7507fa21fe263ba01293","indexName":"blog","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="最小的K个数牛客网——最小的K个数  题目描述输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。 解题思路全排序 先排序，接着找出最小的K个数。时间复制度为O(n*n)。  12345678910111213141516171819public ArrayList&amp;lt;Integer&amp;gt; GetLeastNumbers_">
+  <meta name="description" content="最小的K个数牛客网——最小的K个数  题目描述输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。">
 <meta name="keywords" content="-剑指offer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指offer——最小的K个数（java版本）">
 <meta property="og:url" content="https://www.notex.top/2018/10/codeinterview-minimum-k-number.html">
 <meta property="og:site_name" content="Notex`s Blog">
-<meta property="og:description" content="最小的K个数牛客网——最小的K个数  题目描述输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。 解题思路全排序 先排序，接着找出最小的K个数。时间复制度为O(n*n)。  12345678910111213141516171819public ArrayList&amp;lt;Integer&amp;gt; GetLeastNumbers_">
+<meta property="og:description" content="最小的K个数牛客网——最小的K个数  题目描述输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-23T10:59:48.713Z">
+<meta property="og:updated_time" content="2020-03-31T05:57:47.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer——最小的K个数（java版本）">
-<meta name="twitter:description" content="最小的K个数牛客网——最小的K个数  题目描述输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。 解题思路全排序 先排序，接着找出最小的K个数。时间复制度为O(n*n)。  12345678910111213141516171819public ArrayList&amp;lt;Integer&amp;gt; GetLeastNumbers_">
+<meta name="twitter:description" content="最小的K个数牛客网——最小的K个数  题目描述输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。">
 
 <link rel="canonical" href="https://www.notex.top/2018/10/codeinterview-minimum-k-number.html">
 
@@ -234,7 +234,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-23 18:59:48" itemprop="dateModified" datetime="2019-12-23T18:59:48+08:00">2019-12-23</time>
+                <time title="修改时间：2020-03-31 13:57:47" itemprop="dateModified" datetime="2020-03-31T13:57:47+08:00">2020-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
         <blockquote>
 <p>最小的K个数<br><a href="https://www.nowcoder.com/practice/6a296eb82cf844ca8539b57c23e6e9bf?tpId=13&amp;tqId=11182&amp;tPage=2&amp;rp=2&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">牛客网——最小的K个数</a></p>
 </blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。<br><a id="more"></a></p>
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="全排序"><a href="#全排序" class="headerlink" title="全排序"></a>全排序</h3><blockquote>
 <p>先排序，接着找出最小的K个数。时间复制度为O(n*n)。</p>
 </blockquote>

@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="Notex`s Blog">
 <meta property="og:description" content="概述HashMap是Java的一个集合类，是我们在开发中经常使用的。本文记录个人阅读源码的一些步骤和理解。阅读步骤大致为：变量–&amp;gt;构造方法–&amp;gt;常用方法。在JDK7中，HashMap的底层数据结构为：数组+链表的形式。在JDK8中，HashMap的底层数据结构为：数组+链表+红黑树（TreeNode），增加红黑树的结构。 变量 loadFactor 加载因子默认加载因子为0.75f,为何">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-30T11:07:21.422Z">
+<meta property="og:updated_time" content="2020-03-31T05:59:23.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDK8源码学习:HashMap">
 <meta name="twitter:description" content="概述HashMap是Java的一个集合类，是我们在开发中经常使用的。本文记录个人阅读源码的一些步骤和理解。阅读步骤大致为：变量–&amp;gt;构造方法–&amp;gt;常用方法。在JDK7中，HashMap的底层数据结构为：数组+链表的形式。在JDK8中，HashMap的底层数据结构为：数组+链表+红黑树（TreeNode），增加红黑树的结构。 变量 loadFactor 加载因子默认加载因子为0.75f,为何">
@@ -234,7 +234,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-30 19:07:21" itemprop="dateModified" datetime="2020-03-30T19:07:21+08:00">2020-03-30</time>
+                <time title="修改时间：2020-03-31 13:59:23" itemprop="dateModified" datetime="2020-03-31T13:59:23+08:00">2020-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,7 +285,7 @@
 <li>size<br>记录数组的长度</li>
 <li>modCount<br>modCount是记录HashMap发送结构性变化的次数，比如扩容、rehash。</li>
 </ul>
-<p>另外大概了解一下HashMap的最大容量 <code>1&lt;&lt;30</code>也就是2的30次方，初始化容量为16。</p>
+<p>另外大概了解一下HashMap的最大容量 <code>1&lt;&lt;30</code>也就是2的30次方，初始化容量为16。<br><a id="more"></a></p>
 <h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><ul>
 <li><p>HashMap(int, float)<br>为了方便阅读，注释直接写在了代码里面。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(<span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (initialCapacity &lt; <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal initial capacity: "</span> +</span><br><span class="line">										   initialCapacity);</span><br><span class="line">	<span class="comment">// 初始化容量必须在 1&lt;&lt;30 以内</span></span><br><span class="line">	<span class="keyword">if</span> (initialCapacity &gt; MAXIMUM_CAPACITY)</span><br><span class="line">		initialCapacity = MAXIMUM_CAPACITY;</span><br><span class="line">	<span class="keyword">if</span> (loadFactor &lt;= <span class="number">0</span> || Float.isNaN(loadFactor))</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal load factor: "</span> +</span><br><span class="line">										   loadFactor);</span><br><span class="line">	<span class="keyword">this</span>.loadFactor = loadFactor;</span><br><span class="line">		<span class="comment">// 调用了tableSizeFor方法，该方法是返回给定的`initialCapacity`值的向上取最近的2的幂。比如传递的值为12，返回16。</span></span><br><span class="line">	<span class="keyword">this</span>.threshold = tableSizeFor(initialCapacity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

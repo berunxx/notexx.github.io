@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="Notex`s Blog">
 <meta property="og:description" content="概述ConcurrentHashMap 是一个线程安全类，是为了解决HashMap的线程不安全衍生出的一个类。虽然说HashTable也是线程的安全，但是HashTable的同步机制颗粒度太粗（实现机制是将put、size等各种方法加上‘synchronized’，导致了所有并发操作需要竞争同一把锁），导致性能低下,现在已经很少被推荐使用。在jdk8中，ConcurrentHashMap底层实现使">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-12T06:06:38.270Z">
+<meta property="og:updated_time" content="2020-03-31T05:59:18.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jdk8源码学习：ConcurrentHashMap">
 <meta name="twitter:description" content="概述ConcurrentHashMap 是一个线程安全类，是为了解决HashMap的线程不安全衍生出的一个类。虽然说HashTable也是线程的安全，但是HashTable的同步机制颗粒度太粗（实现机制是将put、size等各种方法加上‘synchronized’，导致了所有并发操作需要竞争同一把锁），导致性能低下,现在已经很少被推荐使用。在jdk8中，ConcurrentHashMap底层实现使">
@@ -234,7 +234,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-12 14:06:38" itemprop="dateModified" datetime="2020-03-12T14:06:38+08:00">2020-03-12</time>
+                <time title="修改时间：2020-03-31 13:59:18" itemprop="dateModified" datetime="2020-03-31T13:59:18+08:00">2020-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,7 +285,7 @@
 <li>冲突的机会越大，查找所需要的成本增加，查找时间也相应的增加 了。反之亦然。</li>
 <li>结合前面两条，我们必须在 “冲突的机会”与”空间利用率”之间寻找一种平衡与折衷。这种平衡与折衷本质上是数据结构中有名的”时间复杂度-空间复杂度”矛盾的平衡与折衷。</li>
 </ul>
-<h2 id="DEFAULT-CAPACITY-默认容量"><a href="#DEFAULT-CAPACITY-默认容量" class="headerlink" title="DEFAULT_CAPACITY 默认容量"></a>DEFAULT_CAPACITY 默认容量</h2><p>DEFAULT_CAPACITY的默认值为16，可以通过构造方法定义该值，但是需要注意的是，DEFAULT_CAPACITY的值是2的幂次方。结合前面的加载因子，可以得出，ConcurrentHashMap的初始化容量为:<code>0.75*16=12</code>,当size大于12的时候，就会发生扩容。</p>
+<h2 id="DEFAULT-CAPACITY-默认容量"><a href="#DEFAULT-CAPACITY-默认容量" class="headerlink" title="DEFAULT_CAPACITY 默认容量"></a>DEFAULT_CAPACITY 默认容量</h2><p>DEFAULT_CAPACITY的默认值为16，可以通过构造方法定义该值，但是需要注意的是，DEFAULT_CAPACITY的值是2的幂次方。结合前面的加载因子，可以得出，ConcurrentHashMap的初始化容量为:<code>0.75*16=12</code>,当size大于12的时候，就会发生扩容。<br><a id="more"></a></p>
 <h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用默认初始化表大小（16）创建一个空的map</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">ConcurrentHashMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个新的空map，初始化表大小容纳指定数量的元素，不需要动态调转大小。</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">ConcurrentHashMap</span><span class="params">(<span class="keyword">int</span> initialCapacity)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (initialCapacity &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException();</span><br><span class="line">    <span class="keyword">int</span> cap = ((initialCapacity &gt;= (MAXIMUM_CAPACITY &gt;&gt;&gt; <span class="number">1</span>)) ?</span><br><span class="line">               MAXIMUM_CAPACITY :</span><br><span class="line">               tableSizeFor(initialCapacity + (initialCapacity &gt;&gt;&gt; <span class="number">1</span>) + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">this</span>.sizeCtl = cap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该构造方法 就是设置 sizeCtl; 首先计算<code>initialCapacity + (initialCapacity &gt;&gt;&gt; 1</code> （可以简写为： <code>1.5*initialCapacity + 1</code>）, 再调用<code>tableSizeFor</code> 方法，该方法的作用是：对<code>1.5*initialCapacity + 1</code>向上取最近的2的n次方。比如：初始化大小为：10，计算结果为16。 初始化大小为：15，计算结果为32.</p>
