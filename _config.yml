@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 路小飞的博客
+title: Notex`s Blog
 subtitle:
 description: "个人网站，Java开发者，知识共享。<br> Stay Hungry.<br>Stay Foolish."
 keywords:
-author: 路小飞
-#language: en
-language: zh-Hans
+author: notex
+# language: en
+language: zh-CN
 timezone:
 
 # URL

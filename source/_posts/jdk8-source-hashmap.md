@@ -10,9 +10,7 @@ date: 2018-09-03 00:00:00
 # 概述
 HashMap是Java的一个集合类，是我们在开发中经常使用的。本文记录个人阅读源码的一些步骤和理解。阅读步骤大致为：变量-->构造方法-->常用方法。
 在JDK7中，HashMap的底层数据结构为：数组+链表的形式。
-![](http://www.myluffy.com/blog/wp-content/uploads/2018/09/eb52ee72faf1954da936f71a5b43c232.png)
 在JDK8中，HashMap的底层数据结构为：数组+链表+红黑树（TreeNode），增加红黑树的结构。
-![](http://www.myluffy.com/blog/wp-content/uploads/2018/09/38ce4ff1cf9ece2b706242424fb6ad2c.png)
 # 变量
 - loadFactor 加载因子
 默认加载因子为`0.75f`,为何是`0.75` 而不是其他的值呢？
